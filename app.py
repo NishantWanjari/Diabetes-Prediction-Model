@@ -87,6 +87,17 @@ plt.yticks(np.arange(0, 220, 10))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_glucose)
 
+#BloodPressure vs Age
+st.header('BloodPressure Value Graph (Others vs Yours)')
+fig_glucose = plt.figure()
+ax3 = sns.scatterplot(x='Age', y='BloodPressure', data=df, hue='Outcome', palette='magma')
+ax4 = sns.scatterplot(x=user_data['Age'], y=user_data['BloodPressure'], s=150, color=color)
+plt.xticks(np.arange(10, 100, 5))
+plt.yticks(np.arange(0, 220, 10))
+plt.title('0 - Healthy & 1 - Unhealthy')
+st.pyplot(fig_glucose)
+
+#BMI vs Age
 st.header('BMI Value Graph (Others vs Yours)')
 fig_glucose = plt.figure()
 ax3 = sns.scatterplot(x='Age', y='BMI', data=df, hue='Outcome', palette='magma')
@@ -96,6 +107,14 @@ plt.yticks(np.arange(0, 220, 10))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_glucose)
 
+st.header('Glucose Insulin Value Graph (Others vs Yours)')
+fig_glucose = plt.figure()
+ax3 = sns.scatterplot(x='Glucose', y='Insulin', data=df, hue='Outcome', palette='magma')
+ax4 = sns.scatterplot(x=user_data['Age'], y=user_data['BMI'], s=150, color=color)
+plt.xticks(np.arange(0, 200, 20))
+plt.yticks(np.arange(0, 846, 150))
+plt.title('0 - Healthy & 1 - Unhealthy')
+st.pyplot(fig_glucose)
 # ... (Repeat the process for other visualizations)
 
 # OUTPUT
